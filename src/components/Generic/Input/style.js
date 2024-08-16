@@ -36,6 +36,7 @@ const Container = styled.input`
   align-items: center;
   border-radius: 2px;
   min-width: 120px;
+  padding-left: 10px;
 
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
   height: ${({ height }) => (height ? `${height}px` : "44px")};
