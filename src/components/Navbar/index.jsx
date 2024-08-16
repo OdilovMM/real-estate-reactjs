@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Container, Link, Logo, Section, Wrapper, Main } from "./style";
 import { navbar } from "../../utils/navbar";
+import { Button } from "../Generic";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -26,7 +27,9 @@ export const Home = () => {
             })}
           </Section>
           <Section>
-            <button>Sign in</button>
+            <Button onClick={() => navigate("/signin")} type="dark">
+              Sign in
+            </Button>
           </Section>
         </Wrapper>
       </Main>
