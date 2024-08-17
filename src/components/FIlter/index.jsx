@@ -25,10 +25,10 @@ export const Filter = () => {
 
   console.log(query.get("country"), "params");
 
-  const onChange = ({ target: { name, value } }) => {
-    // console.log(name, value);
-    navigate(`${location?.pathname}${useReplace(name, value)}`);
-  };
+  // const onChange = ({ target: { name, value } }) => {
+  //   // console.log(name, value);
+  //   navigate(`${location?.pathname}${useReplace(name, value)}`);
+  // };
 
   const menu = (
     <MenuWrapper>

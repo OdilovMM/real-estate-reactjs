@@ -3,7 +3,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { Container, Link, Logo, Section, Wrapper, Main } from "./style";
 import { navbar } from "../../utils/navbar";
 import { Button } from "../Generic";
-import Filter from "../FIlter";
+import Filter from "../Filter";
 
 export const Home = () => {
   const navigate = useNavigate();
