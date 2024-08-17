@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
-import { Arrow, Blur, Container, Content, Img } from './style';
-import { Carousel } from 'antd';
+import React, { useRef } from "react";
+import { Arrow, Blur, Container, Content, Img } from "./style";
+import { Carousel } from "antd";
 
-import img1 from '../../assets/img/house1.png';
-import img2 from '../../assets/img/house2.png';
+import img1 from "../../assets/img/house1.png";
+import img2 from "../../assets/img/house2.png";
 
 export const GenCarousel = () => {
   const slider = useRef();
@@ -17,8 +17,8 @@ export const GenCarousel = () => {
       dataset: { name },
     },
   }) => {
-    if (name === 'right') slider.current.next();
-    if (name === 'left') slider.current.prev();
+    if (name === "right") slider.current.next();
+    if (name === "left") slider.current.prev();
   };
 
   return (
@@ -29,14 +29,14 @@ export const GenCarousel = () => {
       </Carousel>
       <Blur />
       <Content>
-        <Content.Title>Skyper Pool Partment</Content.Title>
-        <Content.Desc className='subChild'>
+        <Content.Title>Skyper Pool APartment</Content.Title>
+        <Content.Desc className="subChild">
           112 Glenwood Ave Hyde Park, Boston, MA
         </Content.Desc>
         <Content.Price>5,250 / month</Content.Price>
       </Content>
-      <Arrow data-name='left' onClick={onMove} left />
-      <Arrow data-name='right' onClick={onMove} name='right' />
+      <Arrow data-name="left" onClick={onMove} left />
+      <Arrow data-name="right" onClick={onMove} name="right" />
     </Container>
   );
 };
