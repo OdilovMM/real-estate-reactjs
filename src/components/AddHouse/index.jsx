@@ -44,7 +44,7 @@ export const AddNewHouse = () => {
         body: {
           ...values,
           categoryId: 1,
-          name: "webbriain",
+          name: "web development",
           attachments: imgs,
         },
       }).then((res) => {
@@ -62,7 +62,6 @@ export const AddNewHouse = () => {
       setImg("");
     }
   };
-  console.log(initial, "rrrrres");
 
   return (
     <Wrapper>

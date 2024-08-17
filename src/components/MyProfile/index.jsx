@@ -12,9 +12,9 @@ export const MyProfile = () => {
   const navigate = useNavigate();
   const request = useRequest();
 
-  const { data, refetch } = useQuery([search], () => {
-    return request({ url: `/houses/me`, token: true });
-  });
+  // const { data, refetch } = useQuery([search], () => {
+  //   return request({ url: `/houses/me`, token: true });
+  // });
 
   const columns = [
     {
@@ -48,7 +48,7 @@ export const MyProfile = () => {
     },
     {
       title: "Year Build",
-      render: (data) => <span> {data.houseDetails.yearBuilt}</span>,
+      render: (data) => <span> {data?.houseDetails?.yearBuilt}</span>,
       key: "houseDetails.yearBuilt",
       width: 150,
     },
@@ -74,13 +74,13 @@ export const MyProfile = () => {
             <Icons.Edit
               onClick={(event) => {
                 event.stopPropagation();
-                navigate(`/myprofile/edithouse/${data?.id}`);
+                // navigate(`/myprofile/edithouse/${data?.id}`);
               }}
             />
             <Icons.Delete
               onClick={(event) => {
                 event.stopPropagation();
-                onDelete(data?.id);
+                // onDelete(data?.id);
               }}
             />
           </User>
@@ -89,16 +89,16 @@ export const MyProfile = () => {
     },
   ];
 
-  const onDelete = (id) => {
-    request({ url: `/houses/${id}`, token: true, method: "DELETE" }).then(
-      (res) => {
-        if (res?.success) {
-          message.info("Successfully deleted");
-          refetch();
-        }
-      }
-    );
-  };
+  // const onDelete = (id) => {
+  //   request({ url: `/houses/${id}`, token: true, method: "DELETE" }).then(
+  //     (res) => {
+  //       if (res?.success) {
+  //         message.info("Successfully deleted");
+  //         refetch();
+  //       }
+  //     }
+  //   );
+  // };
 
   return (
     <Wrapper>
@@ -123,7 +123,7 @@ export const MyProfile = () => {
               }, // click row
             };
           }}
-          dataSource={data?.data}
+          // dataSource={data?.data}
           columns={columns}
         />
       </Container>

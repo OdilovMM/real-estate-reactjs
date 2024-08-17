@@ -15,7 +15,6 @@ export const Favourite = () => {
     navigate(`/properties/${id}`);
   };
 
-  console.log(data);
   return (
     <React.Fragment>
       <div className="info" style={{ textAlign: "center" }}>

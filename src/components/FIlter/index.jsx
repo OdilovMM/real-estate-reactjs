@@ -1,10 +1,14 @@
 import { Dropdown } from "antd";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, forwardRef } from "react";
 import { Input, Button } from "../Generic";
 import { Container, Icons, MenuWrapper, Section, SelectAnt } from "./style";
 // import { useReplace } from "../../hooks/useReplace";
 import { useLocation, useNavigate } from "react-router-dom";
 import useSearch from "../../hooks/useSearch";
+
+const InputRef = forwardRef((props, ref) => {
+  return <input ref={ref} {...props} />;
+});
 
 export const Filter = () => {
   const [data, setData] = useState([]);
@@ -95,8 +99,8 @@ export const Filter = () => {
           // onChange={() => onChangeSort()}
         >
           <SelectAnt.Option value={""}>Select Sort</SelectAnt.Option>
-          <SelectAnt.Option value={"asc"}>O'suvchi</SelectAnt.Option>
-          <SelectAnt.Option value={"desc"}>Kamayuvchi</SelectAnt.Option>
+          <SelectAnt.Option value={"asc"}>From high</SelectAnt.Option>
+          <SelectAnt.Option value={"desc"}>From low</SelectAnt.Option>
         </SelectAnt>
 
         <SelectAnt value={value}>
