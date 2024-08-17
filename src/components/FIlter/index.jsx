@@ -1,8 +1,8 @@
 import { Dropdown } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 import { Input, Button } from "../Generic";
-import { Container, Icons, MenuWrapper, Section, SelectAnt } from './style';
-import { useReplace } from "../../hooks/useReplace";
+import { Container, Icons, MenuWrapper, Section, SelectAnt } from "./style";
+import { UseReplace } from "../../hooks/UseReplace";
 import { useLocation, useNavigate } from "react-router-dom";
 import useSearch from "../../hooks/useSearch";
 
@@ -29,10 +29,10 @@ export const Filter = () => {
   const maxPriceRef = useRef();
 
   console.log(query.get("country"), "params");
-
+  const replacePath = (name, value) => UseReplace(name, value);
   // Correctly use the hook inside the component
   const onChange = ({ target: { name, value } }) => {
-    navigate(`${location?.pathname}${useReplace(name, value)}`);
+    navigate(`${location?.pathname}${replacePath(name, value)}`);
   };
 
   useEffect(() => {
