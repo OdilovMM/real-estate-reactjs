@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  /* display: flex;
+  display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between; */
+  justify-content: space-between;
 
   display: grid;
   grid-auto-flow: row;

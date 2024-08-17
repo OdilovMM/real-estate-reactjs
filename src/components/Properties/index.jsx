@@ -11,22 +11,30 @@ export const Properties = () => {
   const navigate = useNavigate();
   const request = useRequest();
 
-  useEffect(() => {
-    request({ url: `/houses/list${search}` }).then((res) =>
-      setData(res?.data || [])
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [search]);
-
   const onSelect = (id) => {
     navigate(`/properties/${id}`);
   };
 
   return (
-    <React.Fragment>
-      <div className="title">Properties</div>
+    <>
       <div className="info" style={{ textAlign: "center" }}>
-        Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed dolorem
+        aut quos obcaecati inventore, animi, sunt quam aliquam suscipit
+        distinctio ratione accusamus culpa fuga itaque illum officia est fugiat
+        dolore excepturi ipsum reprehenderit error doloribus? Commodi nulla
+        saepe consequatur dolorem ipsam exercitationem, aliquid beatae velit sit
+        repudiandae delectus libero odio eaque. Perspiciatis voluptatum porro
+        architecto dicta iste nulla deserunt nam, illo necessitatibus, assumenda
+        ratione molestiae rerum consequuntur! Non aperiam temporibus odio
+        deleniti voluptas quaerat consequuntur ad, odit perferendis quas unde
+        enim cumque harum optio. Fugit ducimus veniam deserunt nihil corporis a,
+        odio soluta aliquid voluptas dicta, error nesciunt minus sapiente sit,
+        exercitationem possimus perferendis. Perferendis, sequi autem reiciendis
+        natus sunt at numquam, et praesentium veniam illum explicabo accusantium
+        consectetur saepe quia aliquam repellendus expedita unde deserunt,
+        ratione consequuntur. Magnam debitis, in possimus consequuntur culpa
+        amet, accusamus eaque dignissimos placeat pariatur optio unde tempora
+        consequatur quis corrupti. Qui, voluptatum iste. Quidem.
       </div>
       <Container>
         {data?.map((value) => {
@@ -39,7 +47,7 @@ export const Properties = () => {
           );
         })}
       </Container>
-    </React.Fragment>
+    </>
   );
 };
 

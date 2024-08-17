@@ -24,18 +24,10 @@ export const GenCarousel = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch(`${url}/categories/list`)
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res?.data || []);
-      });
-  }, []);
-  console.log(data);
   return (
     <Container>
       <Slider {...settings}>
-        {data.map((value) => {
+        {data?.map((value) => {
           return (
             <CategoryCard
               onClick={() => navigate(`/properties?category_id=${value.id}`)}

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { ReactComponent as email } from '../../assets/icons/email.svg';
-import { ReactComponent as phone } from '../../assets/icons/phone.svg';
-import { ReactComponent as cardHouse } from '../../assets/icons/cardHouse.svg';
-import { ReactComponent as cardMaps } from '../../assets/icons/cardMaps.svg';
+import { ReactComponent as email } from '../../assets/icons/email-icon.svg';
+import { ReactComponent as phone } from '../../assets/icons/twitter.svg';
+import { ReactComponent as cardHouse } from '../../assets/icons/houses.svg';
+import { ReactComponent as cardMaps } from '../../assets/icons/maps.svg';
 
 const Container = styled.div`
   height: 417px;

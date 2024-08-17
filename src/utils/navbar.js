@@ -37,18 +37,18 @@ export const navbar = [
     private: false,
     hidden: false,
   },
-  {
-    id: useId,
-    element: (
-      <React.Suspense fallback={<React.Fragment>Loading...</React.Fragment>}>
-        <HouseItem />
-      </React.Suspense>
-    ),
-    title: "Single House",
-    path: "/properties/:id",
-    private: false,
-    hidden: true,
-  },
+  // {
+  //   id: useId,
+  //   element: (
+  //     <React.Suspense fallback={<React.Fragment>Loading...</React.Fragment>}>
+  //       <HouseItem />
+  //     </React.Suspense>
+  //   ),
+  //   title: "Single House",
+  //   path: "/properties/:id",
+  //   private: true,
+  //   hidden: true,
+  // },
   {
     id: useId,
     element: <MyProfile />,
@@ -65,14 +65,14 @@ export const navbar = [
     private: true,
     hidden: true,
   },
-  {
-    id: useId,
-    element: <AddNewHouse />,
-    title: "Add New House",
-    path: "/myprofile/edithouse/:id",
-    private: true,
-    hidden: true,
-  },
+  // {
+  //   id: useId,
+  //   element: <AddNewHouse />,
+  //   title: "Add New House",
+  //   path: "/myprofile/edithouse/:id",
+  //   private: true,
+  //   hidden: true,
+  // },
   {
     id: useId,
     element: <Favourite />,

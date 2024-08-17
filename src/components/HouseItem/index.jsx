@@ -1,7 +1,6 @@
 import { Checkbox } from "antd";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import useRequest from "../../hooks/useRequest";
 import { Input, Button } from "../Generic";
 import Recent from "../Recent";
 import nouser from "../../assets/img/nouser.png";
@@ -16,6 +15,7 @@ import {
   User,
   Wrapper,
 } from "./style";
+
 import { Yandex } from "../Generic/Yandex";
 // const { REACT_APP_BASE_URL: url } = process.env;
 
@@ -24,17 +24,17 @@ export const HouseItem = () => {
   const params = useParams();
   // const request = useRequest();
 
-  useEffect(() => {
-    // request({ url: `/houses/list/${params?.id}` }).then((res) =>
-    //   setData(res?.data || [])
-    // );
-    fetch(`https://houzing-app.herokuapp.com/api/v1/houses/id/${params?.id}`)
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res?.data);
-        window.scrollTo(0, 0);
-      });
-  }, [params?.id]);
+  // useEffect(() => {
+  //   // request({ url: `/houses/list/${params?.id}` }).then((res) =>
+  //   //   setData(res?.data || [])
+  //   // );
+  //   fetch(`https://houzing-app.herokuapp.com/api/v1/houses/id/${params?.id}`)
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       setData(res?.data);
+  //       window.scrollTo(0, 0);
+  //     });
+  // }, [params?.id]);
 
   return (
     <React.Fragment>
@@ -201,8 +201,8 @@ export const HouseItem = () => {
           <Section style={{ justifyContent: "flex-start" }}>
             <User.Img src={nouser} alt="user image" />
             <Content>
-              <div className="subTitle">Webbrain Academy</div>
-              <div className="info">998 33 576 2020</div>
+              <div className="subTitle">National Geography</div>
+              <div className="info">+1 265 98 743</div>
             </Content>
           </Section>
           <Input placeholder="Name" />

@@ -6,6 +6,7 @@ import Why from "../Why";
 import Recent from "../Recent";
 import Banner from "../Banner";
 import { Container } from "./style";
+import Footer from "../Footer";
 
 export const Home = () => {
   return (
@@ -16,6 +17,7 @@ export const Home = () => {
       <Category />
       <Banner />
       <Recent />
+      <Footer />
     </Container>
   );
 };

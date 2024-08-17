@@ -2,7 +2,7 @@ import { Dropdown } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 import { Input, Button } from "../Generic";
 import { Container, Icons, MenuWrapper, Section, SelectAnt } from "./style";
-import { UseReplace } from "../../hooks/UseReplace";
+// import { useReplace } from "../../hooks/useReplace";
 import { useLocation, useNavigate } from "react-router-dom";
 import useSearch from "../../hooks/useSearch";
 
@@ -28,21 +28,10 @@ export const Filter = () => {
   const minPriceRef = useRef();
   const maxPriceRef = useRef();
 
-  console.log(query.get("country"), "params");
-  const replacePath = (name, value) => UseReplace(name, value);
   // Correctly use the hook inside the component
-  const onChange = ({ target: { name, value } }) => {
-    navigate(`${location?.pathname}${replacePath(name, value)}`);
-  };
-
-  useEffect(() => {
-    fetch(`${url}/categories/list`)
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res?.data || []);
-      });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // const onChange = ({ target: { name, value } }) => {
+  //   navigate(`${location?.pathname}${useReplace(name, value)}`);
+  // };
 
   useEffect(() => {
     let [d] = data?.filter(
@@ -53,12 +42,12 @@ export const Filter = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location?.search, data]);
 
-  const onChangeCategory = (category_id) => {
-    navigate(`/properties${uzeReplace("category_id", category_id)}`);
-  };
-  const onChangeSort = (sort) => {
-    navigate(`/properties${uzeReplace("sort", sort)}`);
-  };
+  // const onChangeCategory = (category_id) => {
+  //   navigate(`/properties${useReplace("category_id", category_id)}`);
+  // };
+  // const onChangeSort = (sort) => {
+  //   navigate(`/properties${useReplace("sort", sort)}`);
+  // };
 
   const menu = (
     <MenuWrapper>
@@ -66,27 +55,27 @@ export const Filter = () => {
       <Section>
         <Input
           defaultValue={query.get("country")}
-          onChange={onChange}
+          // onChange={onChange}
           ref={countryRef}
           name="country"
           placeholder="Country"
         />
         <Input
-          onChange={onChange}
+          // onChange={onChange}
           defaultValue={query.get("region")}
           ref={regionRef}
           name="region"
           placeholder="Region"
         />
         <Input
-          onChange={onChange}
+          // onChange={onChange}
           defaultValue={query.get("city")}
           ref={cityRef}
           name="address"
           placeholder="City"
         />
         <Input
-          onChange={onChange}
+          // onChange={onChange}
           defaultValue={query.get("zip_code")}
           name="zip_code"
           ref={zipRef}
@@ -97,22 +86,23 @@ export const Filter = () => {
       <Section>
         <Input
           name="room"
-          onChange={onChange}
+          // onChange={onChange}
           ref={roomsRef}
           placeholder="Rooms"
         />
         <SelectAnt
           defaultValue={query.get("sort") || "Select Sort"}
-          onChange={onChangeSort}
+          // onChange={() => onChangeSort()}
         >
           <SelectAnt.Option value={""}>Select Sort</SelectAnt.Option>
           <SelectAnt.Option value={"asc"}>O'suvchi</SelectAnt.Option>
           <SelectAnt.Option value={"desc"}>Kamayuvchi</SelectAnt.Option>
         </SelectAnt>
 
-        <SelectAnt value={value} onChange={onChangeCategory}>
+        <SelectAnt value={value}>
+          {/* <SelectAnt value={value} onChange={() => onChangeCategory()}> */}
           <SelectAnt.Option value={""}>Select Category</SelectAnt.Option>
-          {data.map((value) => {
+          {data?.map((value) => {
             return (
               <SelectAnt.Option key={value.id} value={value?.id}>
                 {value?.name}
@@ -124,13 +114,13 @@ export const Filter = () => {
       <h1 className="subTitle">Price</h1>
       <Section>
         <Input
-          onChange={onChange}
+          // onChange={onChange}
           name="min_price"
           ref={minPriceRef}
           placeholder="Min price"
         />
         <Input
-          onChange={onChange}
+          // onChange={onChange}
           name="max_price"
           ref={maxPriceRef}
           placeholder="Max price"

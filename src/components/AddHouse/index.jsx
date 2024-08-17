@@ -29,21 +29,7 @@ export const AddNewHouse = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  // single house
-  useEffect(() => {
-    id &&
-      request({ url: `/houses/id/${id}`, token: true }).then((res) => {
-        setImgs(res?.data?.attachments);
-        setInitail({ ...res?.data });
-      });
-  }, []);
 
-  // category
-  useEffect(() => {
-    request({ url: `/categories/list` }).then((res) =>
-      setCategory(res?.data || [])
-    );
-  }, []);
 
   const formik = useFormik({
     initialValues: initial,

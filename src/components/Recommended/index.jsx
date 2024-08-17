@@ -24,13 +24,15 @@ export const Recommended = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch(`${url}/houses/list`)
-      .then((res) => res.json())
-      .then((res) => {
-        setData(res?.data || []);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${url}/houses/list`)
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       setData(res?.data || []);
+  //     });
+  // }, []);
+
+
   return (
     <Container>
       <Content>
@@ -40,7 +42,7 @@ export const Recommended = () => {
         </div>
       </Content>
       <Slider {...settings}>
-        {data.map((value) => {
+        {data?.map((value) => {
           return (
             <HouseCard
               gap={10}
