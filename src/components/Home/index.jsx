@@ -1,12 +1,11 @@
 import React from "react";
+import Carousel from "../Carousel";
 import { Container } from "./style";
-import { Input, Button } from "../Generic";
 
-const Home = () => {
+export const Home = () => {
   return (
     <Container>
-      <h1>Home</h1>
-      <Input width={200} placeholder={"test"} />
+      <Carousel />
     </Container>
   );
 };
