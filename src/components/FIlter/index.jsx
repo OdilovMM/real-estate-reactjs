@@ -2,7 +2,7 @@ import { Dropdown } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 import { Input, Button } from "../Generic";
 import { Container, Icons, MenuWrapper, Section, SelectAnt } from './style';
-import { UseReplace } from "../../hooks/useReplace";
+import { useReplace } from "../../hooks/useReplace";
 import { useLocation, useNavigate } from "react-router-dom";
 import useSearch from "../../hooks/useSearch";
 
@@ -32,7 +32,7 @@ export const Filter = () => {
 
   // Correctly use the hook inside the component
   const onChange = ({ target: { name, value } }) => {
-    navigate(`${location?.pathname}${UseReplace(name, value)}`);
+    navigate(`${location?.pathname}${useReplace(name, value)}`);
   };
 
   useEffect(() => {
