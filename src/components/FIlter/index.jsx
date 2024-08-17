@@ -2,8 +2,15 @@ import { Dropdown } from "antd";
 import React, { useRef } from "react";
 import { Input, Button } from "../Generic";
 import { Container, Icons, MenuWrapper, Section } from "./style";
+import { useReplace } from "../../hooks/useReplace";
+import { useLocation, useNavigate } from "react-router-dom";
+import useSearch from "../../hooks/useSearch";
 
 export const Filter = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const query = useSearch();
+
   const countryRef = useRef();
   const regionRef = useRef();
   const cityRef = useRef();
@@ -15,6 +22,13 @@ export const Filter = () => {
 
   const minPriceRef = useRef();
   const maxPriceRef = useRef();
+
+  console.log(query.get("country"), "params");
+
+  const onChange = ({ target: { name, value } }) => {
+    // console.log(name, value);
+    navigate(`${location?.pathname}${useReplace(name, value)}`);
+  };
 
   const menu = (
     <MenuWrapper>
@@ -49,6 +63,7 @@ export const Filter = () => {
         overlay={menu}
         placement="bottomRight"
         arrow={{ pointAtCenter: true }}
+        trigger="click"
       >
         <div>
           <Button type="light">

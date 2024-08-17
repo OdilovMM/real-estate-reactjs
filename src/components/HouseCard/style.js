@@ -7,14 +7,14 @@ import { ReactComponent as love } from '../../assets/icons/love.svg';
 import { ReactComponent as resize } from '../../assets/icons/resize.svg';
 
 const Container = styled.div`
-  width: 380px;
+  width: 300px;
   height: 430px;
 
   filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
 
-  margin: 100px;
+  margin: 50px;
 `;
 
 const Img = styled.img`
@@ -52,8 +52,8 @@ Icons.Ruler = styled(ruler)``;
 Icons.Resize = styled(resize)``;
 Icons.Love = styled(love)`
   width: 27px;
-  height: 27px;
-  padding: 6px;
+  height: 22px;
+  padding: 3px;
   background: #f6f8f9;
   border-radius: 50%;
   margin-left: 20px;
